@@ -81,4 +81,15 @@ public class Metodos {
 
     }
 
+    public void borrarArchivo(String path){
+        File file = new File(path);
+        if(file.exists()){
+            if(file.delete()){
+                System.out.println("Se eliminó el fichero");
+            }
+        }else{
+            System.out.println("El fichero no existe.");
+        }
+    }
+
 }
