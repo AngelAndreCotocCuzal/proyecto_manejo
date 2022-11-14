@@ -4,12 +4,12 @@ public class App
 {
     public static void main(String[] args) {
 
-        String archivo = "C:/directorio/como convertir.txt";
+        String archivo = "C:/directorio/nuevo_prueba.txt";
         String carpeta = "C:/directorio/";
         Metodos met = new Metodos();
         main txt_pdf = new main();
         
-        //met.crearArchivos(archivo);
+        met.crearArchivos(archivo);
         met.escribirArchivo(archivo, "xd");
         met.escribirArchivo(archivo, "cambiando datos");
         met.escribirArchivo(archivo, "hola");
