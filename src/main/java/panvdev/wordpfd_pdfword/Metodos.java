@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 
 public class Metodos {
@@ -85,15 +86,17 @@ public class Metodos {
         File file = new File(path);
         if(file.exists()){
             if(file.delete()){
-                System.out.println("Se eliminó el fichero");
+                System.out.println("");
             }
         }else{
-            System.out.println("El fichero no existe.");
+            System.out.println("");
         }
     }
 
     public void BuscarPalabra(String archivo) throws IOException{
-        String palabra=JOptionPane.showInputDialog("Ingrese una cadena");
+        Scanner nombre = new Scanner (System.in);
+        System.out.println("Ingrese una cadena: ");
+        String palabra=nombre.nextLine();
         try{
             BufferedReader br = new BufferedReader(new FileReader(archivo));
             String leer="";
@@ -101,7 +104,7 @@ public class Metodos {
             while ((leer=br.readLine())!=null){
                 i++;
                 if(leer.contains(palabra)){
-                    JOptionPane.showMessageDialog(null, "La palabra "+palabra+" fue encontrada en la linea: "+i);
+                    System.out.println("La palabra "+palabra+" fue encontrada en la linea: "+i);
                 }
             }
         }catch (FileNotFoundException ex){

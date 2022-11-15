@@ -57,7 +57,7 @@ public class App
                     break;
 
                 case 3:
-                    met.ArchivoCarpeta(archivo);
+                    met.ArchivoCarpeta(carpeta);
                     break;
 
                 case 4:
@@ -78,8 +78,6 @@ public class App
 
             }
         }
-
-
 
         //met.crearArchivos(archivo);
         //met.escribirArchivo(archivo, "hola estamos escribiendo");
