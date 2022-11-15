@@ -63,7 +63,7 @@ public class App
                 case 4:
                     System.out.println("ingrese el texto que desea escribir: ");
                     text = txt.nextLine();
-                    met.escribirArchivo(archivo, "jdoasjdljasdjasoldjlskadkj");
+                    met.escribirArchivo(archivo, text);
                     met.borrarArchivo(borrar);
                     txt_pdf.convertir(archivo, "C:/proyecto/proyecto.pdf");
                     System.out.println("Guardando cambios....");
