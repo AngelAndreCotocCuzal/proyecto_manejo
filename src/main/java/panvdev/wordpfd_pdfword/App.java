@@ -18,6 +18,7 @@ public class App
         met.ArchivoCarpeta(carpeta);
         met.BuscarArchivo(archivo);
         met.borrarArchivo(borrar);
+        met.BuscarPalabra(archivo);
         txt_pdf.convertir(archivo, "C:/directorio/a.pdf");
         System.out.println("Convirtiendo a pdf");
 

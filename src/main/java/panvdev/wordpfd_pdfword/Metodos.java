@@ -92,4 +92,21 @@ public class Metodos {
         }
     }
 
+    public void BuscarPalabra(String archivo) throws IOException{
+        String palabra=JOptionPane.showInputDialog("Ingrese una cadena");
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            String leer="";
+            int i=0;
+            while ((leer=br.readLine())!=null){
+                i++;
+                if(leer.contains(palabra)){
+                    JOptionPane.showMessageDialog(null, "La palabra "+palabra+" fue encontrada en la linea: "+i);
+                }
+            }
+        }catch (FileNotFoundException ex){
+            ex.printStackTrace();
+        }
+    }
+
 }
