@@ -14,13 +14,14 @@ public class App
         Scanner txt = new Scanner(System.in);
         boolean salir = false;
         int opcion;
-        String datos;
+        //String datos;
         String text;
+        String dir = "";
 
 
         String archivo = "C:/directorio/nuevo_prueba.txt";
 
-        String carpeta = "C:/directorio/";
+        String carpeta = "";
         String borrar = "C:/proyecto/proyecto.pdf";
         Metodos met = new Metodos();
         main txt_pdf = new main();
@@ -46,10 +47,15 @@ public class App
 
             switch (opcion){
                 case 1:
+                    System.out.println("Ingrese el nombre del archivo: ");
+                    String nombre = leer.nextLine();
+                    dir ="C:/proyecto/"+nombre+".pdf";
+
                     System.out.println("Creando archivo");
                     met.crearArchivos(archivo);
-                    txt_pdf.convertir(archivo, "C:/proyecto/proyecto.pdf");
-                    System.out.println("archivo creado");
+
+                    txt_pdf.convertir(archivo, dir);
+                    System.out.println("Archivo Creado");
                     break;
 
                 case 2:
@@ -57,21 +63,26 @@ public class App
                     break;
 
                 case 3:
+                    System.out.println("¿Que carpeta desea ver?: ");
+                    String nomb = carp.nextLine();
+                    carpeta = "C:/"+nomb;
+
                     met.ArchivoCarpeta(carpeta);
                     break;
 
                 case 4:
-                    System.out.println("ingrese el texto que desea escribir: ");
+                    System.out.println("Ingrese el texto que desea escribir: ");
                     text = txt.nextLine();
                     met.escribirArchivo(archivo, text);
                     met.borrarArchivo(borrar);
-                    txt_pdf.convertir(archivo, "C:/proyecto/proyecto.pdf");
+                    txt_pdf.convertir(archivo, dir);
                     System.out.println("Guardando cambios....");
                     break;
                 case 5:
                     met.BuscarPalabra(archivo);
                     break;
                 case 6:
+                    System.out.println("¡Que Tenga un Buen Día :)!");
                     salir = true;
                     break;
 
